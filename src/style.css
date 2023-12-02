@@ -1,8 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Kenia&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: "Roboto", sans-serif;
-  padding: 0;
+  background-color: steelblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
   margin: 0;
 }
 
-/*# sourceMappingURL=style.css.map */
+@media (max-width: 800px) {
+  body {
+    flex-direction: column;
+  }
+}
+
+.empty {
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+  border: solid 3px black;
+  background: white;
+}
+
+.empty .fill {
+  background-image: url("https://source.unsplash.com/random/150x150");
+  height: 145px;
+  width: 145px;
+  cursor: pointer;
+}
+
+.hold {
+  border: solid 5px #ccc;
+}
+
+.hovered {
+  background-color: #333;
+  border-color: white;
+  border-style: dashed;
+}
