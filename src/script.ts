@@ -1,18 +1,8 @@
+//selecting our elements
 const fill: HTMLElement | null = document.querySelector(".fill");
 const empties: NodeListOf<HTMLElement> = document.querySelectorAll(".empty");
 
-if (fill) {
-  fill.addEventListener("dragstart", dragStart);
-  fill.addEventListener("dragend", dragEnd);
-}
-
-for (const empty of empties) {
-  empty.addEventListener("dragover", dragOver);
-  empty.addEventListener("dragenter", dragEnter);
-  empty.addEventListener("dragleave", dragLeave);
-  empty.addEventListener("drop", dragDrop);
-}
-
+// our functions
 function dragStart(this: HTMLElement): void {
   this.className += " hold";
   setTimeout(() => (this.className = "invisible"), 0);
@@ -41,4 +31,20 @@ function dragDrop(this: HTMLElement): void {
   if (fill) {
     this.append(fill);
   }
+}
+
+///////////////////////our event lisnters
+
+// checking first if we have the elements
+if (fill) {
+  fill.addEventListener("dragstart", dragStart);
+  fill.addEventListener("dragend", dragEnd);
+}
+
+// loop over each empty
+for (const empty of empties) {
+  empty.addEventListener("dragover", dragOver);
+  empty.addEventListener("dragenter", dragEnter);
+  empty.addEventListener("dragleave", dragLeave);
+  empty.addEventListener("drop", dragDrop);
 }
