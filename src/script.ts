@@ -20,6 +20,7 @@ function dragStart(this: HTMLElement): void {
 
 function dragEnd(this: HTMLElement): void {
   this.className = "fill";
+  console.log("drag end");
 }
 
 function dragOver(e: DragEvent): void {
@@ -32,6 +33,7 @@ function dragEnter(this: HTMLElement): void {
 
 function dragLeave(this: HTMLElement): void {
   this.className = "empty";
+  console.log("drag leave");
 }
 
 function dragDrop(this: HTMLElement): void {

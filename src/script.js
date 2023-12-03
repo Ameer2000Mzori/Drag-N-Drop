@@ -18,6 +18,7 @@ function dragStart() {
 }
 function dragEnd() {
     this.className = "fill";
+    console.log("drag end");
 }
 function dragOver(e) {
     e.preventDefault();
@@ -27,6 +28,7 @@ function dragEnter() {
 }
 function dragLeave() {
     this.className = "empty";
+    console.log("drag leave");
 }
 function dragDrop() {
     this.className = "empty";
